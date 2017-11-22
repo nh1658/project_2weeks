@@ -217,11 +217,19 @@ background-color : #2B3137;
 /* ------resumeForm.jsp ------------*/
 
 #contentRe { 
-	width:70%;
+	width:100%;
 	height: auto;
 	margin: 150px auto;
 	padding: 20px 0;
 	
+}
+
+.page_menutitle{
+	width:100%;
+	height: auto;
+	margin:80px;
+	padding: 20px 0;
+	font-size: 18pt;
 }
 
 /* ------resumeForm.jsp ³¡------------*/
