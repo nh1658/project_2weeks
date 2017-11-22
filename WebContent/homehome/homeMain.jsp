@@ -7,110 +7,8 @@
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
-
+<link rel="stylesheet" type="text/css" href="home.css">
 <style>
-#container {
-	width: 80%;
-	padding: 5%;
-	border-style: solid;
-	border-width: 5px;
-}
-
-#header { /* 헤더 */
-	width: 96%;
-	height: 20%;
-	background-color: #2B3137;
-}
-
-/*---------------------------------------------*/
-.loginM {
-	text-align: center;
-	padding: 20px;
-	margin: 20px;
-}
-
-.loginM a {
-	text-decoration: none;
-	color: white;
-}
-
-.loginM a:hover {
-	color: red;
-}
-
-.signIU {
-	float: right;
-}
-
-.main {
-	height: 100px;
-}
-
-.homeimg {
-	float: left;
-}
-/*----------------------------------------------------*/
-#content { /* 본문 */
-	width: 96%;
-	height: 70%;
-}
-
-}
-.menubarLink:hover {
-	color: black;
-}
-
-.menubarLink .subLink:hover {
-	color: black;
-	background-color: #f1f1f1;
-	text-decoration: none;
-	
-}
-
-.menubarLink:hover .submenu {
-	display: inline;
-}
-
-.menubarLink {
-	width: 96%;
-}
-
-.menuLink {
-	display: inline-block;
-	text-align: center;
-	list-style: none;
-	padding-left: 0px;
-	line-height: 40px;
-	width: 17.5%;
-	background: #2B3137;
-	color: #fff;					/*큰 메뉴 글자 흰색 #fff*/
-	font-size: 12px;
-	font-family: "돋움";
-	padding: 5px;
-	font-weight: bold;
-}
-
-.menuLink:hover { /* 스포츠(메뉴) 에 마우스오버할때 글씨색 바뀜*/
-	color: #fff;	
-	background: #099;
-}
-
-.submenu {
-	color: white;
-	background: #099;		/*바탕네모 청록색 #099*/
-	display: none;
-	list-style: none;
-	padding-left: 0px;
-}
-
-.subLink {
-	display: block;
-	text-align: center;
-	color: #fff;	
-	list-style: none;
-	text-align: center;
-}
-
 .column {
 	display: inline-block;
 	width: 20%;
@@ -126,13 +24,6 @@
 	clear: both;
 }
 
-#footer {
-	text-align: center;
-	background-color: #f1f1f1;
-	font-size: 10px;
-	width: 96%;
-	height: 15%;
-}
 </style>
 
 
@@ -143,6 +34,7 @@
 
 		<!-- container -->
 		<div id="header">
+		<h1 class="header-text">메인(homeMain.jsp)</h1>
 			<div class="main">
 				<div class="loginM">
 					<div class="homeimg">
@@ -192,13 +84,6 @@
 						</ul>
 					</li>
 
-					<li class="menuLink">슬프다
-						<ul class="submenu">
-							<li><a class="subLink"> 왜</a></li>
-							<li><a class="subLink">이렇게</a></li>
-							<li><a class="subLink">안되는거야</a></li>
-						</ul>
-					</li>
 
 				</ul>
 
