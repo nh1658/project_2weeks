@@ -1,300 +1,56 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 
-<style>
-#container {
-	width: 80%;
-	padding: 5%;
-	border-style: solid;
-	border-width: 5px;
-}
-
-#header { /* 헤더 */
-	width: 96%;
-	height: 20%;
-	background-color: #2B3137;
-
-}
-.loginM {
-	text-align: center;
-	padding: 20px;
-	margin: 20px;
-}
-
-.loginM a {
-	text-decoration: none;
-	color: white;
-}
-
-.loginM a:hover {
-	color: red;
-}
-.signIU{
-	float: right;
-}
-.main{
-	height: 100px;
-}
-.homeimg{
-	float: left;
-}
-
-#content { /* 본문 */
-	width: 96%;
-	height: 70%;
-	
-}
-
-
-}
-.menubarLink:hover {
-	color: black;
-}
-
-.menubarLink .subLink:hover {
-	color:black;
-	background-color: #f1f1f1;
-}
-
-.menubarLink:hover .submenu {
-	display: inline;
-}
-
-.menubarLink {
-	width: 96%;
-}
-
-.menuLink {
-	display:inline-block;
-	text-align: center;
-	list-style: none;
-	padding-left: 0px;
-	line-height: 40px;
-	width: 17.5%;
-	background: #2B3137;
-	color: #fff;
-	font-size: 12px;
-	font-family: "돋움";
-	padding: 5px;
-	font-weight: bold;
-}
-
-.menuLink:hover { /* 스포츠(메뉴) 에 마우스오버할때 글씨색 바뀜*/
-	color: white;
-	background: #099;
-}
-
-.submenu {
-	display: none;
-	list-style: none;
-	padding-left: 0px;
-}
-
-.subLink {
-	display: block;
-	text-align: center;
-	text-decoration: none;
-	list-style: none;
-	text-align: center;
-}
-.column {
-   display:inline-block;
-   width: 20%;
-   padding: 20px;
-   margin: 30px;
-   height: 300px; /* Should be removed. Only for demonstration */
-}
-
-/* Clear floats after the columns */
-.row:after {
-   content: "";
-   display: table;
-   clear: both;
-}
-
-#footer {
-	text-align: center;
-	background-color: #f1f1f1;
-	font-size: 10px;
-	width: 96%;
-	height: 15%;
-}
-</style>
-
-
 </head>
-
 <body>
-	<div id="container">
-		<!-- container -->
-		<div id="header">
-				<div class="main">
+	<ul>
+		<li><select name="BDIV" id="ctg" class="sel_cate"
+			onchange="fnCngList(this.value);">
+				<option value="">선택</option>
+				<option value="B1">분류1</option>
+				<option value="B2">분류2</option>
+				<option value="B3">분류3</option>
+		</select></li>
 
-			<div class="loginM">
-			<div class="homeimg"><a href="#" ><img src="img/homeLogo.png" width="100px" height="60px"></img>
-			</a></div>
-			<div class="signIU">
-			<a href="">HOME</a>&nbsp&nbsp <a href="">MYPAGE</a>&nbsp&nbsp 
-			<input type="search" placeholder="search"></input>
+		<li><select name="SDIV" id="ctg_nm" class="sel_list">
+				<option value="">소분류</option>
+		</select>
+	</ul>
 
-			<button type="submit" form="search">
-						<img src="img/serch.png" width="20px" height="20px"></img>
-					</button>
-			
-					<a href="">SIGN IN</a>&nbsp&nbsp <a href="">SIGN UP</a></div>
-			</div>
-		</div>
-				<div id="Meme">
-				<!--  메뉴바 -->
-				<ul class="menubarLink">
-					<li class="menuLink">스포츠
-						<ul class="submenu">
-							<li><a class="subLink">스포츠1</a></li>
-							<li><a class="subLink">스포츠2</a></li>
-							<li><a class="subLink">스포츠3</a></li>
-						</ul>
-					</li>
+<script>
+funcion fnCngList(sVal){
+	var f = document.form1;
+	var opt = $("#ctg_nm option").length();
+	
+	if(sVal==""){
+		num = new Array("소분류");
+		vnum = new Attay("");
+	}else if(sVal=="B1"){
+		num = new Array("분류1-1","분류1-2","분류1-3");
+		vnum = new Attay("1-1","1-2","1-3");
+	}else if(sVal=="B2"){
+		num = new Array("분류2-1","분류2-2","분류2-3");
+		vnum = new Attay("2-1","2-2","2-3");
+	}else if(sVal=="B3"){
+		num = new Array("분류3-1","분류3-2","분류3-3");
+		vnum = new Attay("3-1","3-2","3-3");
+	}
+	
+	for(var i = 0; i<opt; i++){
+		f.SDIV.options[0] = null;
+	}
+	for(k = 0; k<num.length; k++){
+		f.SDIV.options[k] = new Option(num[k],vnum[k]);
+	}
+}
 
-					<li class="menuLink">게임
-						<ul class="submenu">
-							<li><a class="subLink">게임1</a></li>
-							<li><a class="subLink">게임2</a></li>
-							<li><a class="subLink">게임3</a></li>
-						</ul>
-					</li>
-
-					<li class="menuLink">취업
-						<ul class="submenu">
-							<li><a class="subLink">이력서 작성</a></li>
-							<li><a class="subLink">이력서 수정</a></li>
-							<li><a class="subLink">이력서 공유하기</a></li>
-						</ul>
-					</li>
-
-					<li class="menuLink">뷰티
-						<ul class="submenu">
-							<li><a class="subLink">뷰티1</a></li>
-							<li><a class="subLink">뷰티2</a></li>
-							<li><a class="subLink">뷰티3</a></li>
-						</ul>
-					</li>
-
-					<li class="menuLink">슬프다
-						<ul class="submenu">
-							<li><a class="subLink"> 왜</a></li>
-							<li><a class="subLink">이렇게</a></li>
-							<li><a class="subLink">안되는거야</a></li>
-						</ul>
-					</li>
-
-				</ul>
-
-			</div>
-			<!-- 메뉴바끝 -->
-		</div>
-
-		<div id="content">
-			<!-- 컨텐트 -->
-
-		
-<div class="row">
-         <div class="column" style="background-color: #aaa;">
-            <h2>board1</h2>
-            <ul>
-               <li>1</li>
-               <li>2</li>
-               <li>3</li>
-               <li>4</li>
-               <li>5</li>
-               <li>6</li>
-               <li>7</li>
-            </ul>
-         </div>
-         <div class="column" style="background-color: #bbb;">
-            <h2>board2</h2>
-            <ul>
-               <li>1</li>
-               <li>2</li>
-               <li>3</li>
-               <li>4</li>
-               <li>5</li>
-               <li>6</li>
-               <li>7</li>
-            </ul>
-         </div>
-         
-         <div class="column" style="background-color: #aaa;">
-            <h2>board1</h2>
-            <ul>
-               <li>1</li>
-               <li>2</li>
-               <li>3</li>
-               <li>4</li>
-               <li>5</li>
-               <li>6</li>
-               <li>7</li>
-            </ul>
-         </div>
-         <div class="column" style="background-color: #bbb;">
-            <h2>board2</h2>
-            <ul>
-               <li>1</li>
-               <li>2</li>
-               <li>3</li>
-               <li>4</li>
-               <li>5</li>
-               <li>6</li>
-               <li>7</li>
-            </ul>
-         </div>
-         <div class="column" style="background-color: #aaa;">
-            <h2>board1</h2>
-            <ul>
-               <li>1</li>
-               <li>2</li>
-               <li>3</li>
-               <li>4</li>
-               <li>5</li>
-               <li>6</li>
-               <li>7</li>
-            </ul>
-         </div>
-         <div class="column" style="background-color: #bbb;">
-            <h2>board2</h2>
-            <ul>
-               <li>1</li>
-               <li>2</li>
-               <li>3</li>
-               <li>4</li>
-               <li>5</li>
-               <li>6</li>
-               <li>7</li>
-            </ul>
-         </div>
-</div>
-			<br> <br> <br> <br> <br>
-
-		</div>
-		<!-- 컨텐트끝 -->
-
-		
-<div id="footer">
-			<p> 진짜 왜 안되는지 모르겠다.. 뭐가 불만인거니 css 고수님 만나고싶다...</p>
-		</div>
-
-
-
-
-
-
-
-	</div>
-	<!-- container끝 -->
+</script>
 
 </body>
 </html>

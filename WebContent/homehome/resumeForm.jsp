@@ -25,8 +25,7 @@
 						<a href="homeMain.jsp">HOME</a>&nbsp;&nbsp; <a href="">MYPAGE</a>&nbsp;&nbsp;
 						<input type="text"> <a href="#"><span
 							class="glyphicon glyphicon-search"></span></a> &nbsp;&nbsp; <a
-							href="homeSignUp.jsp">SIGN IN</a>&nbsp;&nbsp; <a
-							href="homeSignin.jsp">SIGN UP</a>
+							href="homeSignIn.jsp">SIGN IN</a>&nbsp;&nbsp; <a href="homeSignUp.jsp">SIGN UP</a>
 					</div>
 				</div>
 			</div>
@@ -125,10 +124,9 @@
 							<td colspan="10"><textarea id="intro" name="intro" rows="30"
 									cols="90" style="overflow-x: hidden;"></textarea></td>
 						</tr>
-
-
-
 					</table>
+					
+					
 					<div class="button_div">
 						<input type="submit" value="저장" class="button_type1"> <input
 							type="reset" value="다시 작성" class="button_type1">

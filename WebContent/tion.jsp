@@ -5,76 +5,54 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
+  <script src="http://code.jquery.com/jquery-latest.js"></script>
+  <script  language=javascript>
+function fnCngList(sVal){
+	var f = document.form1;
+	var opt = $("#ctg_nm option").length();
+	
+	if(sVal==""){
+		num = new Array("소분류");
+		vnum = new Array("");
+	}else if(sVal=="B1"){
+		num = new Array("분류1-1","분류1-2","분류1-3");
+		vnum = new Array("1-1","1-2","1-3");
+	}else if(sVal=="B2"){
+		num = new Array("분류2-1","분류2-2","분류2-3");
+		vnum = new Array("2-1","2-2","2-3");
+	}else if(sVal=="B3"){
+		num = new Array("분류3-1","분류3-2","분류3-3");
+		vnum = new Array("3-1","3-2","3-3");
+	}
+	
+	for(var i = 0; i<opt; i++){
+		f.SDIV.options[0] = null;
+	}
+	for(k = 0; k<num.length; k++){
+		f.SDIV.options[k] = new Option(num[k],vnum[k]);
+	}
+}
+
+</script>
 </head>
+
 <body>
-	<!-- body //-->
-	<div id="body" class="login">
-		<!-- CONTENTS //-->
-		<div id="contents">
-			<!-- 로그인 //-->
-			<div id="login">
+<form name=form1>
+	<ul>
+		<li><select name="BDIV" id="ctg" class="sel_cate"
+			onchange="fnCngList(this.value);">
+				<option value="">선택</option>
+				<option value="B1">분류1</option>
+				<option value="B2">분류2</option>
+				<option value="B3">분류3</option>
+		</select></li>
 
-				<!-- 로그인 //-->
-				<h2>
-					<img src="//pics.auction.co.kr/member/login/tit_login.gif"
-						alt="회원로그인" />
-				</h2>
+		<li><select name="SDIV" id="ctg_nm" class="sel_list">
+				<option value="">소분류</option>
+		</select>
+	</ul>
 
-				<div class="loginwrap">
+</form>
 
-
-					<!-- 로그인영역 //-->
-					<h3 class="hiding">회원로그인</h3>
-
-					<!--member-login-->
-					<div class="member-login">
-						<div class="loginform">
-
-							<!-- 정보 입력 -->
-							<div class="input">
-								<span> <label for="id"><img
-										src="//pics.auction.co.kr/member/login/txt_id.gif" alt="회원아이디" />
-								</label> <input type="text" class="txt" id="id" name="id"
-									style="ime-mode: inactive" value=""
-									onkeydown="return keycheck2(this.event);" tabindex="1"
-									maxlength="20" /> <label class="remember-id"
-									for="checkboxKIDBase"> <input name="checkboxKIDBase"
-										type="checkbox" id="checkboxKIDBase" tabindex="4" />ID기억하기
-								</label>
-								</span> <span> <label for="password"> <img
-										src="//pics.auction.co.kr/member/login/txt_pw.gif" alt="비밀번호" />
-								</label> <input type="password" class="txt" maxlength="15" id="password"
-									name="password" onkeydown="return keycheck(this.event);"
-									tabindex="2" />
-								</span>
-							</div>
-							<!--//정보 입력-->
-
-
-							<div class="login-btn">
-								<input value="로그인" type="submit" class="btn_login" id="Image1"
-									name="Image1" tabindex="5">
-							</div>
-							<!--//login btn-->
-							<a target="_blank" class="btn_join"
-								href="http://through.auction.co.kr/Common/SafeRedirect.aspx?cc=0C41&next=https%3a%2f%2fmemberssl.auction.co.kr%2fmembership%2fsignup%2fChoiceMemberType.aspx%3fafterregisturl%3dhttp%3a%2f%2fwww.auction.co.kr%2f%3fredirect%3d1%26pid%3d346">회원가입</a>
-							<a class="btn_sch_id"
-								href="http://through.auction.co.kr/Common/SafeRedirect.aspx?cc=0C42&next=https%3a%2f%2fmemberssl.auction.co.kr%2fmembership%2fIDPW%2fFindID.aspx%3furl%3dhttp%3a%2f%2fwww.auction.co.kr%2f%3fredirect%3d1%26pid%3d346">아이디찾기</a>
-							<a class="btn_sch_pw"
-								href="http://through.auction.co.kr/Common/SafeRedirect.aspx?cc=0C43&next=https%3a%2f%2fmemberssl.auction.co.kr%2fmembership%2fIDPW%2fResetPassword.aspx%3furl%3dhttp%3a%2f%2fwww.auction.co.kr%2f%3fredirect%3d1%26pid%3d346">비밀번호찾기</a>
-
-
-
-						</div>
-						<!--loginForm-->
-						<div class="disabled-access">
-							<a href="javascript:LoginErrHelpPop();"><img
-								src="//pics.auction.co.kr/member/login/txt_loginerror.gif"
-								alt="로그인이 안될때" /></a>
-						</div>
-					</div>
-					<!--//member-login-->
-
-					<!-- 로그인영역 //-->
 </body>
 </html>

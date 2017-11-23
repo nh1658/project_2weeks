@@ -47,7 +47,7 @@ background-color : #2B3137;
   /*@2    .main: loginM+homeIcon+signIU /*/
 .loginM{
 	padding: 20px;
-	margin: 20px;
+	background-color: white;
 	
 /*background-color: white; 위치확인, 지워도됨*/
 }
@@ -233,6 +233,27 @@ background-color : #2B3137;
 }
 
 /* ------resumeForm.jsp 끝------------*/
+
+
+/* ------ homeBoard.jsp ---------- */
+#contentBo {
+	width: 100%;
+	height: auto;
+	margin: 100px auto;
+	padding: 20px 0;
+}
+
+.page_menutitle_Bo {
+	width: 100%;
+	height: auto;
+	margin: 80px;
+	padding: 20px 0;
+	font-size: 18pt;
+}
+
+/* ------ homeBoard.jsp 끝 ---------- */
+
+
 
 #footer {
 	text-align: center;

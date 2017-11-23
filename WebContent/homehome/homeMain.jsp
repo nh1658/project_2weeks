@@ -45,7 +45,7 @@
 						<a href="homeMain.jsp">HOME</a>&nbsp;&nbsp; <a href="">MYPAGE</a>&nbsp;&nbsp;
 						<input type="text"> <a href="#"><span
 							class="glyphicon glyphicon-search"></span></a> &nbsp;&nbsp; <a
-							href="homeSignUp.jsp">SIGN IN</a>&nbsp;&nbsp; <a href="homeSignin.jsp">SIGN UP</a>
+						href="homeSignIn.jsp">SIGN IN</a>&nbsp;&nbsp; <a href="homeSignUp.jsp">SIGN UP</a>
 					</div>
 				</div>
 			</div>
